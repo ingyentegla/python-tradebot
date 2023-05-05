@@ -22,7 +22,7 @@ def home():
     with open(path + "/data/portfolio.yaml", "r") as fp:
         data = yaml.load(fp, yaml.FullLoader)
         plt.plot(data)
-        plt.savefig("static/portfolio.png", dpi=100)
+        plt.savefig(path + "/UI/static/portfolio.png", dpi=100)
     return render_template("home.html", portfolio=Portfolio(), mode=mode)
 
 
