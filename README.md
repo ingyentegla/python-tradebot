@@ -16,10 +16,9 @@ pip install -r requirements.txt
 
 **Change your alpaca-api keys in data/keys.yaml**
 
-Start the application
-```
-python3 UI/app.py
-```
+Run UI/app.py in pycharm.
+
+
 You can acces the user interface at http://127.0.0.1:5000/
 
 ## About the project
