@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>manual trading</title>
+    <link href="{{ url_for('static',filename='style.css') }}" rel="stylesheet" type="text/css">
+</head>
+<body>
+<nav>
+    <ul>
+        <li><a href="/">Dashboard</a></li>
+        <li><a href="/manual">Manual trading</a></li>
+        <li><a href="/secret">Change api key</a></li>
+    </ul>
+</nav>
+<div>
+    An error occured!
+    {{ message }}
+</div>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Trading Bot</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='style.css') }}">
+</head>
+<body>
+<header>
+<nav>
+    <ul>
+        <li><a href="/">Dashboard</a></li>
+        <li><a href="/manual">Manual trading</a></li>
+        <li><a href="/secret">Change api key</a></li>
+    </ul>
+</nav>
+</header>
+<div class="status">
+    <h1>Total Cash: ${{portfolio.cash}}</h1>
+    <h1>Total Equity: ${{portfolio.total_equity}}</h1>
+</div>
+<div class="buttons">
+    <form method="post">
+        {% if mode=="ai-mode": %}
+        <div class="fake-button">AI Mode</div>
+        <button type="submit" id="wsb-mode" name="button" value="wsb-mode">WSB Mode</button>
+        {% elif mode=="wsb-mode": %}
+        <button type="submit" id="ai-mode" name="button" value="ai-mode">AI Mode</button>
+        <div class="fake-button">WSB Mode</div>
+        {% endif %}
+    </form>
+</div>
+<div class="image">
+    <img src="{{url_for('static',filename='portfolio.png') }}" alt="Total equity chart">
+</div>
+<div class="table">
+    <table>
+        <thead>
+        <tr>
+            <th>Symbol</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Total Price</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for stock in portfolio.positions %}
+        <tr>
+            <td>{{stock["symbol"]}}</td>
+            <td>{{stock["qty"]}}</td>
+            <td>${{stock["price"]}}</td>
+            <td>${{stock["price"] * stock["qty"]}}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
