@@ -34,7 +34,8 @@ def post_home():
         data[k] = v
 
     mode = data["button"]
-    trader.__del__()
+    if trader is not None:
+        trader.__del__()
     trader = AITrader() if mode == "ai-mode" else WSBTrader()
     return redirect("/")
 
