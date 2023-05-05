@@ -3,7 +3,7 @@
 ## Installation
 Clone the repo
 ```
-git clone https://github.com/ingyentegla/pyyolo.git
+git clone https://github.com/ingyentegla/python-tradebot.git
 ```
 
 Instal requirements
@@ -11,7 +11,10 @@ Instal requirements
 pip install -r requirements.txt
 ```
 
-Change your alpaca-api keys in data/keys.yaml
+**Change project directory in config.py** (I know it's not nice, but it's a last minute solution...)
+
+
+**Change your alpaca-api keys in data/keys.yaml**
 
 Start the application
 ```
