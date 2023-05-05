@@ -1,3 +1,3 @@
 
 
-path = "/home/daniel/Projects/PYTHON/piton_kotprog"
+path = "/home/daniel/Projects/Python/ppython_tradebot"
